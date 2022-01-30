@@ -8,6 +8,7 @@ import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
@@ -83,7 +84,7 @@ public class Util {
      * @param input an incoming set
      * @return an association between a group and a list of values
      */
-    public static Map<Group, List<CarResult>> groupBy(Set<CarResult> input) {
+    public static Map<Group, List<CarResult>> groupBy(Collection<CarResult> input) {
         return input.stream().collect(Collectors.groupingBy(x -> Group.determineGroup(x.getSippCode()), toSortedList(new LowToHighPriceComparator())));
     }
 

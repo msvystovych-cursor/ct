@@ -15,6 +15,7 @@ public class Main {
         Set<CarResult> sortedCars = Util.sort(cars);
         Map<Group, List<CarResult>> groups = Util.groupBy(sortedCars);
 
+
         System.out.println(groups);
     }
 }
